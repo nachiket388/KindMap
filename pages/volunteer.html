@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KindMap — Volunteer Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='../style/style5.css'>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Kind<span>Map</span></a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel" id="leftPanel">
+    <!-- Login panel content -->
+    <div class="panel-inner" id="panelLogin">
+      <div class="panel-badge">🌿 Volunteer Portal</div>
+      <div class="panel-title">Good people,<br><em>great causes.</em></div>
+      <div class="panel-sub">Sign in to access your task board, track your impact, and discover new opportunities to help across Kolkata.</div>
+      <div class="panel-perks">
+        <div class="perk">
+          <div class="perk-ico">✦</div>
+          <div class="perk-text"><h4>AI-matched tasks</h4><p>Personalised recommendations based on your skills and schedule</p></div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico">🏅</div>
+          <div class="perk-text"><h4>Points & badges</h4><p>Earn recognition for every hour you give back to the community</p></div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico">🗺️</div>
+          <div class="perk-text"><h4>City impact map</h4><p>See where your work shows up on the Kolkata volunteer heatmap</p></div>
+        </div>
+      </div>
+      <div class="panel-stats">
+        <div><div class="pstat-n">2,400+</div><div class="pstat-l">Active volunteers</div></div>
+        <div><div class="pstat-n">18k</div><div class="pstat-l">Tasks completed</div></div>
+      </div>
+    </div>
+    <!-- Register panel content -->
+    <div class="panel-inner" id="panelRegister" style="display:none">
+      <div class="panel-badge">🌱 Join KindMap</div>
+      <div class="panel-title">Start your<br><em>volunteer journey.</em></div>
+      <div class="panel-sub">Create your free account and connect with hundreds of NGOs doing meaningful work in your city.</div>
+      <div class="panel-perks">
+        <div class="perk">
+          <div class="perk-ico">⚡</div>
+          <div class="perk-text"><h4>Takes 2 minutes</h4><p>Quick setup with Google or email — no lengthy forms</p></div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico">🔍</div>
+          <div class="perk-text"><h4>Find tasks instantly</h4><p>Browse 500+ open micro-tasks across Kolkata today</p></div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico">🤝</div>
+          <div class="perk-text"><h4>340 NGOs waiting</h4><p>From education to environment — find a cause you care about</p></div>
+        </div>
+      </div>
+      <div class="panel-stats">
+        <div><div class="pstat-n">340</div><div class="pstat-l">NGOs registered</div></div>
+        <div><div class="pstat-n">500+</div><div class="pstat-l">Open tasks now</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <!-- TABS -->
+    <div class="form-tabs">
+      <button class="ftab active" onclick="switchTab('login')">Sign in</button>
+      <button class="ftab" onclick="switchTab('register')">Create account</button>
+    </div>
+
+    <!-- ===== LOGIN VIEW ===== -->
+    <div class="panel-view active" id="loginView">
+      <div class="form-header">
+        <div class="form-title">Welcome back 👋</div>
+        <div class="form-sub">New to KindMap? <a href="#" onclick="switchTab('register')">Create a free account</a></div>
+      </div>
+
+      <button class="google-btn" onclick="handleGoogleLogin()">
+        <svg class="google-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Continue with Google
+      </button>
+
+      <div class="divider"><span>or sign in with email</span></div>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="loginPw" placeholder="••••••••" required>
+            <button type="button" class="pw-toggle" onclick="togglePw('loginPw',this)">👁</button>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;margin-bottom:20px;">
+          <a href="#" style="font-size:12px;color:var(--sage);text-decoration:none;">Forgot password?</a>
+        </div>
+        <button type="submit" class="submit-btn">Sign in to my account →</button>
+      </form>
+      <div class="form-note">By continuing you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</div>
+    </div>
+
+    <!-- ===== REGISTER VIEW (multi-step) ===== -->
+    <div class="panel-view" id="registerView">
+      <div class="form-header">
+        <div class="form-title">Create your account</div>
+        <div class="form-sub">Already a member? <a href="#" onclick="switchTab('login')">Sign in instead</a></div>
+      </div>
+
+      <button class="google-btn" onclick="handleGoogleLogin()">
+        <svg class="google-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Sign up with Google
+      </button>
+
+      <div class="divider"><span>or fill in your details</span></div>
+
+      <!-- Step indicator -->
+      <div class="steps-indicator">
+        <div class="step-dot active" id="dot0"></div>
+        <div class="step-dot" id="dot1"></div>
+        <div class="step-dot" id="dot2"></div>
+        <span class="step-label" id="stepLabel">Step 1 of 3 — Basic info</span>
+      </div>
+
+      <!-- STEP 1: Basic Info -->
+      <div class="step-form active" id="step0">
+        <div class="field form-row">
+          <div class="field">
+            <label>First name</label>
+            <input type="text" placeholder="Aryan" required>
+          </div>
+          <div class="field">
+            <label>Last name</label>
+            <input type="text" placeholder="Sen" required>
+          </div>
+        </div>
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label>Phone number</label>
+          <input type="tel" placeholder="+91 98765 43210">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="regPw" placeholder="Min 8 characters" oninput="checkStrength(this)">
+            <button type="button" class="pw-toggle" onclick="togglePw('regPw',this)">👁</button>
+          </div>
+          <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn-next-step" onclick="nextStep(1)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Profile -->
+      <div class="step-form" id="step1">
+        <div class="field">
+          <label>Area / Neighbourhood</label>
+          <input type="text" placeholder="e.g. Salt Lake, Park Street, Dum Dum">
+        </div>
+        <div class="field">
+          <label>Occupation</label>
+          <select>
+            <option value="">Select your occupation</option>
+            <option>Student</option>
+            <option>Working professional</option>
+            <option>Freelancer</option>
+            <option>Retired</option>
+            <option>Homemaker</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Age group</label>
+          <select>
+            <option value="">Select age group</option>
+            <option>Under 18</option>
+            <option>18–24</option>
+            <option>25–34</option>
+            <option>35–44</option>
+            <option>45–60</option>
+            <option>60+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Your skills (select all that apply)</label>
+          <div class="chips-wrap">
+            <span class="chip" onclick="toggleChip(this)">Teaching</span>
+            <span class="chip" onclick="toggleChip(this)">Medical</span>
+            <span class="chip" onclick="toggleChip(this)">Tech / IT</span>
+            <span class="chip" onclick="toggleChip(this)">Photography</span>
+            <span class="chip" onclick="toggleChip(this)">Cooking</span>
+            <span class="chip" onclick="toggleChip(this)">Driving</span>
+            <span class="chip" onclick="toggleChip(this)">Languages</span>
+            <span class="chip" onclick="toggleChip(this)">Art / Design</span>
+            <span class="chip" onclick="toggleChip(this)">Carpentry</span>
+            <span class="chip" onclick="toggleChip(this)">Admin / Office</span>
+            <span class="chip" onclick="toggleChip(this)">Fundraising</span>
+            <span class="chip" onclick="toggleChip(this)">Music</span>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn-back-step" onclick="nextStep(0)">Back</button>
+          <button type="button" class="btn-next-step" onclick="nextStep(2)">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Availability & Causes -->
+      <div class="step-form" id="step2">
+        <div class="field">
+          <label>Weekly availability</label>
+          <div class="avail-grid">
+            <label class="avail-item"><input type="checkbox"><div class="avail-box">Mon</div></label>
+            <label class="avail-item"><input type="checkbox"><div class="avail-box">Tue</div></label>
+            <label class="avail-item"><input type="checkbox"><div class="avail-box">Wed</div></label>
+            <label class="avail-item"><input type="checkbox"><div class="avail-box">Thu</div></label>
+            <label class="avail-item"><input type="checkbox"><div class="avail-box">Fri</div></label>
+            <label class="avail-item"><input type="checkbox"><div class="avail-box">Sat</div></label>
+            <label class="avail-item"><input type="checkbox"><div class="avail-box">Sun</div></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Hours per week I can give</label>
+          <select>
+            <option value="">Select range</option>
+            <option>1–2 hours</option>
+            <option>3–5 hours</option>
+            <option>6–10 hours</option>
+            <option>10+ hours</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Causes I care about</label>
+          <div class="chips-wrap">
+            <span class="chip" onclick="toggleChip(this)">Education</span>
+            <span class="chip" onclick="toggleChip(this)">Environment</span>
+            <span class="chip" onclick="toggleChip(this)">Women's rights</span>
+            <span class="chip" onclick="toggleChip(this)">Child welfare</span>
+            <span class="chip" onclick="toggleChip(this)">Animal care</span>
+            <span class="chip" onclick="toggleChip(this)">Elderly care</span>
+            <span class="chip" onclick="toggleChip(this)">Disaster relief</span>
+            <span class="chip" onclick="toggleChip(this)">Healthcare</span>
+            <span class="chip" onclick="toggleChip(this)">Hunger & food</span>
+            <span class="chip" onclick="toggleChip(this)">Mental health</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Anything else you'd like us to know?</label>
+          <textarea placeholder="Languages you speak, certifications, special experience…"></textarea>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn-back-step" onclick="nextStep(1)">Back</button>
+          <button type="button" class="btn-next-step" onclick="submitRegister()">Create my account 🎉</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="step-form" id="stepSuccess">
+        <div class="success-screen">
+          <div class="success-ico">🌿</div>
+          <div class="success-title">You're on the map!</div>
+          <div class="success-sub">Your volunteer profile is live. Go explore tasks matched to your skills across Kolkata.</div>
+          <a href="#" class="success-btn">Browse tasks →</a>
+        </div>
+      </div>
+
+      <div class="form-note" id="regNote">By signing up you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</div>
+    </div>
+
+  </div><!-- right-panel -->
+</div><!-- page-wrap -->
+
+<script src="../script/volunteer.js"></script>
+</body>
+</html>

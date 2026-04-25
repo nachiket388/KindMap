@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KindMap — NGO Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='../style/style2.css'>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Kind<span>Map</span></a>
+  <a href="index.html" class="nav-back" id="navBack">← Back to home</a>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel" id="leftPanel">
+
+    <div class="panel-inner" id="panelLogin">
+      <div class="panel-badge">🏢 NGO Portal</div>
+      <div class="panel-title">Your mission,<br><em>amplified.</em></div>
+      <div class="panel-sub">Sign in to manage tasks, track volunteer slots, and see your city-wide impact in real time.</div>
+      <div class="panel-perks">
+        <div class="perk"><div class="perk-ico">🗂️</div><div class="perk-text"><h4>Live kanban board</h4><p>Track tasks from posting to completion</p></div></div>
+        <div class="perk"><div class="perk-ico">📊</div><div class="perk-text"><h4>AI weekly reports</h4><p>Auto-generated impact summaries every Monday</p></div></div>
+        <div class="perk"><div class="perk-ico">✦</div><div class="perk-text"><h4>AI description assist</h4><p>Gemini helps write posts that attract the right volunteers</p></div></div>
+      </div>
+      <div class="panel-stats">
+        <div><div class="pstat-n">2,400+</div><div class="pstat-l">Active volunteers</div></div>
+        <div><div class="pstat-n">18k</div><div class="pstat-l">Tasks completed</div></div>
+      </div>
+    </div>
+
+    <div class="panel-inner" id="panelRegister" style="display:none">
+      <div class="panel-badge">🌱 Join KindMap</div>
+      <div class="panel-title">Reach thousands<br><em>of helpers.</em></div>
+      <div class="panel-sub">Register in 2 minutes and tap into a city-wide network of skilled volunteers ready to serve your mission.</div>
+      <div class="panel-perks">
+        <div class="perk"><div class="perk-ico">⚡</div><div class="perk-text"><h4>Live instantly</h4><p>Post your first task the moment you sign up</p></div></div>
+        <div class="perk"><div class="perk-ico">🎯</div><div class="perk-text"><h4>AI-matched volunteers</h4><p>Gemini surfaces your tasks to the best-fit volunteers</p></div></div>
+        <div class="perk"><div class="perk-ico">📧</div><div class="perk-text"><h4>Zero manual work</h4><p>Automated slot tracking, emails, and impact reports built in</p></div></div>
+      </div>
+      <div class="panel-stats">
+        <div><div class="pstat-n">340</div><div class="pstat-l">NGOs registered</div></div>
+        <div><div class="pstat-n">500+</div><div class="pstat-l">Open tasks now</div></div>
+      </div>
+    </div>
+
+    <div class="panel-inner" id="panelDash" style="display:none">
+      <div class="panel-badge">🏢 NGO Dashboard</div>
+      <div class="panel-title" id="dashPanelName">Your NGO</div>
+      <div class="panel-sub" id="dashPanelSub">Your tasks are live. Volunteers are being matched by AI right now.</div>
+      <div class="panel-perks">
+        <div class="perk"><div class="perk-ico">📍</div><div class="perk-text"><h4>Live on the city map</h4><p>Your tasks show up on the KindMap heatmap</p></div></div>
+        <div class="perk"><div class="perk-ico">✦</div><div class="perk-text"><h4>AI matching active</h4><p>Gemini is finding the best-fit volunteers for you</p></div></div>
+      </div>
+      <div class="panel-stats">
+        <div><div class="pstat-n">2,400+</div><div class="pstat-l">Volunteers available</div></div>
+        <div><div class="pstat-n">340</div><div class="pstat-l">NGOs on platform</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <!-- TABS -->
+    <div class="form-tabs" id="formTabs">
+      <button class="ftab active" onclick="switchTab('login')">Sign in</button>
+      <button class="ftab" onclick="switchTab('register')">Register NGO</button>
+    </div>
+
+    <!-- ===== LOGIN ===== -->
+    <div class="panel-view active" id="loginView">
+      <div class="form-title">Welcome back 🏢</div>
+      <div class="form-sub">New here? <a href="#" onclick="switchTab('register')">Register your organisation</a></div>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="field">
+          <label>Work email</label>
+          <input type="email" id="loginEmail" placeholder="contact@yourngo.org" required>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="loginPw" placeholder="••••••••" required>
+            <button type="button" class="pw-toggle" onclick="togglePw('loginPw',this)">👁</button>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+          <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(13,17,23,0.55);cursor:pointer;">
+            <input type="checkbox" style="width:auto;accent-color:var(--clay)"> Remember me
+          </label>
+          <a href="#" style="font-size:12px;color:var(--clay);text-decoration:none;">Forgot password?</a>
+        </div>
+        <button type="submit" class="submit-btn">Sign in to NGO portal →</button>
+      </form>
+      <div class="form-note" style="margin-top:18px;"><a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Support</a></div>
+    </div>
+
+    <!-- ===== REGISTER ===== -->
+    <div class="panel-view" id="registerView">
+      <div class="form-title">Register your NGO</div>
+      <div class="form-sub">Already registered? <a href="#" onclick="switchTab('login')">Sign in instead</a></div>
+
+      <form onsubmit="handleRegister(event)">
+
+        <!-- Logo -->
+        <div class="logo-upload-row">
+          <div class="logo-preview" id="logoPreview">🏢</div>
+          <div>
+            <button type="button" class="logo-upload-btn" onclick="document.getElementById('logoFile').click()">Upload logo</button>
+            <input type="file" id="logoFile" accept="image/*" style="display:none" onchange="previewLogo(this)">
+            <div class="logo-hint">PNG or JPG · optional</div>
+          </div>
+        </div>
+
+        <!-- Org details -->
+        <div class="field">
+          <label>Organisation name</label>
+          <input type="text" id="orgName" placeholder="e.g. Swapath Foundation" required>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Organisation type</label>
+            <select>
+              <option value="">Select type</option>
+              <option>Trust</option>
+              <option>Society</option>
+              <option>Section 8 Company</option>
+              <option>Community group</option>
+              <option>International NGO</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Area in Kolkata</label>
+            <select>
+              <option value="">Select area</option>
+              <option>North Kolkata</option>
+              <option>South Kolkata</option>
+              <option>Central Kolkata</option>
+              <option>Salt Lake / Bidhannagar</option>
+              <option>New Town / Rajarhat</option>
+              <option>Howrah</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Mission (one line)</label>
+          <input type="text" placeholder="What does your organisation do?">
+        </div>
+
+        <div class="field">
+          <label>Focus areas</label>
+          <div class="chips-wrap">
+            <span class="chip" onclick="toggleChip(this)">Education</span>
+            <span class="chip" onclick="toggleChip(this)">Environment</span>
+            <span class="chip" onclick="toggleChip(this)">Women's rights</span>
+            <span class="chip" onclick="toggleChip(this)">Child welfare</span>
+            <span class="chip" onclick="toggleChip(this)">Animal care</span>
+            <span class="chip" onclick="toggleChip(this)">Elderly care</span>
+            <span class="chip" onclick="toggleChip(this)">Disaster relief</span>
+            <span class="chip" onclick="toggleChip(this)">Healthcare</span>
+            <span class="chip" onclick="toggleChip(this)">Hunger & food</span>
+            <span class="chip" onclick="toggleChip(this)">Mental health</span>
+          </div>
+        </div>
+
+        <div class="divider"><span>account details</span></div>
+
+        <div class="field">
+          <label>Contact person name</label>
+          <input type="text" placeholder="Full name" required>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Work email</label>
+            <input type="email" placeholder="contact@yourngo.org" required>
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="tel" placeholder="+91 98765 43210">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="regPw" placeholder="Min 8 characters" required>
+            <button type="button" class="pw-toggle" onclick="togglePw('regPw',this)">👁</button>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Create NGO account →</button>
+      </form>
+      <div class="form-note">By signing up you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</div>
+    </div>
+
+    <!-- ===== DASHBOARD ===== -->
+    <div id="dashboardView">
+      <div class="dash-welcome" id="dashWelcome">Welcome back 👋</div>
+      <div class="dash-sub" id="dashSub">Here's what's happening with your tasks today.</div>
+
+      <div class="dash-stats">
+        <div class="dstat">
+          <div class="dstat-n">3</div>
+          <div class="dstat-l">Active tasks</div>
+          <div class="dstat-delta">↑ 1 this week</div>
+        </div>
+        <div class="dstat">
+          <div class="dstat-n">18</div>
+          <div class="dstat-l">Volunteers joined</div>
+          <div class="dstat-delta">↑ 5 today</div>
+        </div>
+        <div class="dstat">
+          <div class="dstat-n">7</div>
+          <div class="dstat-l">Tasks completed</div>
+          <div class="dstat-delta">All time</div>
+        </div>
+      </div>
+
+      <div class="dash-actions">
+        <button class="daction daction-primary">＋ Post new task</button>
+        <button class="daction daction-ghost">🗂️ Kanban</button>
+        <button class="daction daction-ghost">📊 Report</button>
+      </div>
+
+      <div class="section-label">Your current tasks</div>
+      <div class="task-list">
+        <div class="task-item">
+          <div class="task-left">
+            <div class="task-dot dot-urgent"></div>
+            <div>
+              <div class="task-name">Flood relief supply sorting</div>
+              <div class="task-meta">Salt Lake · 13 / 18 slots filled</div>
+            </div>
+          </div>
+          <span class="task-pill pill-urgent">Urgent</span>
+        </div>
+        <div class="task-item">
+          <div class="task-left">
+            <div class="task-dot dot-open"></div>
+            <div>
+              <div class="task-name">Teach basic digital literacy</div>
+              <div class="task-meta">Park Street · 4 / 10 slots filled</div>
+            </div>
+          </div>
+          <span class="task-pill pill-open">Open</span>
+        </div>
+        <div class="task-item">
+          <div class="task-left">
+            <div class="task-dot dot-open"></div>
+            <div>
+              <div class="task-name">Tree plantation — Rabindra Sarobar</div>
+              <div class="task-meta">Dhakuria · 5 / 25 slots filled</div>
+            </div>
+          </div>
+          <span class="task-pill pill-open">Open</span>
+        </div>
+        <div class="task-item">
+          <div class="task-left">
+            <div class="task-dot dot-done"></div>
+            <div>
+              <div class="task-name">Health camp — medical volunteers</div>
+              <div class="task-meta">Dum Dum · 12 / 12 slots filled</div>
+            </div>
+          </div>
+          <span class="task-pill pill-done">Completed</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- right-panel -->
+</div><!-- page-wrap -->
+<script src = "../script/ngo.js"></script>
+</body>
+</html>

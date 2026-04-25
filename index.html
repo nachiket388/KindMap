@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KindMap — Connect. Volunteer. Impact.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='style/style.css'>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">Kind<span>Map</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#tech">Tech stack</a></li>
+    <li><a href="#team">Team</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="pages/volunteer.html" class="btn btn-ghost">Volunteer login</a>
+    <a href="pages/ngo.html" class="btn btn-green">NGO portal →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-left">
+    <div class="hero-badge"><span class="badge-dot"></span>Now live in Kolkata</div>
+    <h1>
+      Where <em>good people</em><br>
+      meet <span class="scratch">urgent</span><br>
+      causes.
+    </h1>
+    <p class="hero-sub">KindMap connects volunteers with NGOs through AI-powered matching, real-time task boards, and a city-wide impact map — all in one platform.</p>
+    <div class="hero-actions">
+      <a href="pages/volunteer.html" class="btn btn-green btn-lg">I want to volunteer</a>
+      <a href="pages/ngo.html" class="btn btn-clay btn-lg">I run an NGO</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">2,400+</div><div class="stat-l">Active volunteers</div></div>
+      <div><div class="stat-n">340</div><div class="stat-l">NGOs registered</div></div>
+      <div><div class="stat-n">18k</div><div class="stat-l">Tasks completed</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="fcard">
+      <span class="fcard-tag tag-urgent">Urgent</span>
+      <div class="fcard-title">Flood relief supply sorting</div>
+      <div class="fcard-meta"><span>📍 Salt Lake, Kolkata</span><span>🕐 3 hrs</span></div>
+      <div class="fcard-bar"><div class="fcard-fill green" style="width:72%"></div></div>
+      <div class="fcard-row">
+        <div class="avs"><div class="av av1">A</div><div class="av av2">B</div><div class="av av3">C</div></div>
+        <span>13 / 18 slots filled</span>
+      </div>
+    </div>
+    <div class="fcard">
+      <span class="fcard-tag tag-ai">✦ AI matched</span>
+      <div class="fcard-title">Teach basic digital literacy</div>
+      <div class="fcard-meta"><span>📍 Park Street</span><span>⭐ 120 pts</span></div>
+      <div class="fcard-bar"><div class="fcard-fill purple" style="width:40%"></div></div>
+      <div class="fcard-row">
+        <div class="avs"><div class="av av4">D</div><div class="av av1">E</div></div>
+        <span>4 / 10 slots filled</span>
+      </div>
+    </div>
+    <div class="fcard">
+      <span class="fcard-tag tag-open">Open</span>
+      <div class="fcard-title">Tree plantation — Rabindra Sarobar</div>
+      <div class="fcard-meta"><span>📍 Dhakuria</span><span>🕐 Half day</span></div>
+      <div class="fcard-bar"><div class="fcard-fill clay" style="width:20%"></div></div>
+      <div class="fcard-row">
+        <div class="avs"><div class="av av2">F</div></div>
+        <span>5 / 25 slots filled</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="reveal">
+    <div class="sec-eyebrow" style="color:var(--clay)">Platform features</div>
+    <div class="sec-title">Everything a city needs to<br><em style="font-style:italic;color:var(--sage)">organise goodness.</em></div>
+    <div class="sec-sub">A full suite of tools for volunteers and NGOs — powered by AI and built for real-world impact at city scale.</div>
+  </div>
+  <div class="feat-tabs reveal" style="transition-delay:0.1s">
+    <button class="ftab active-green" onclick="filterFeat('all',this)">All features</button>
+    <button class="ftab" onclick="filterFeat('vol',this)">For volunteers</button>
+    <button class="ftab" onclick="filterFeat('ngo',this)">For NGOs</button>
+    <button class="ftab" onclick="filterFeat('both',this)">Shared / platform</button>
+  </div>
+  <div class="feat-grid reveal" style="transition-delay:0.2s" id="feat-grid">
+    <!-- Volunteer -->
+    <div class="feat-card" data-type="vol"><div class="feat-ico ico-green">🔐</div><div class="feat-name">Google OAuth login</div><div class="feat-desc">One-click sign-in with Google. Secure PHP session management with role-based access for volunteers vs NGOs.</div><span class="feat-pill pill-v">Volunteer</span></div>
+    <div class="feat-card" data-type="vol"><div class="feat-ico ico-green">👤</div><div class="feat-name">Volunteer profile</div><div class="feat-desc">Set your skills, location, availability, and interests. Used by the AI engine to surface the most relevant tasks for you.</div><span class="feat-pill pill-v">Volunteer</span></div>
+    <div class="feat-card" data-type="vol"><div class="feat-ico ico-green">🔍</div><div class="feat-name">Task browse & filter</div><div class="feat-desc">Explore all available micro-tasks. Filter by category, distance, date, duration, or skill required. Accept in one click.</div><span class="feat-pill pill-v">Volunteer</span></div>
+    <div class="feat-card" data-type="vol"><div class="feat-ico ico-green">📋</div><div class="feat-name">My tasks dashboard</div><div class="feat-desc">All your upcoming, active, and completed tasks in one view. Check in digitally when you arrive on site.</div><span class="feat-pill pill-v">Volunteer</span></div>
+    <div class="feat-card" data-type="vol"><div class="feat-ico ico-gold">🏅</div><div class="feat-name">Points & badges</div><div class="feat-desc">Earn points for every task completed. Unlock badges — First Task, Streak Keeper, Top Volunteer of the Month, and more.</div><span class="feat-pill pill-v">Volunteer</span></div>
+    <div class="feat-card" data-type="vol"><div class="feat-ico ico-purple">✦</div><div class="feat-name">AI task recommendations</div><div class="feat-desc">Gemini-powered engine reads your profile and history to recommend tasks most likely to match your skills and schedule.</div><span class="feat-pill pill-v">Volunteer</span></div>
+    <!-- NGO -->
+    <div class="feat-card" data-type="ngo"><div class="feat-ico ico-clay">🏢</div><div class="feat-name">NGO registration</div><div class="feat-desc">Register your organisation, upload verification docs, set your mission focus areas, and go live to reach thousands of volunteers.</div><span class="feat-pill pill-n">NGO</span></div>
+    <div class="feat-card" data-type="ngo"><div class="feat-ico ico-clay">📝</div><div class="feat-name">Post micro-tasks</div><div class="feat-desc">Create tasks with title, description, slots, location, and time. AI description assist helps you write clearer posts.</div><span class="feat-pill pill-n">NGO</span></div>
+    <div class="feat-card" data-type="ngo"><div class="feat-ico ico-clay">🗂️</div><div class="feat-name">Live kanban board</div><div class="feat-desc">Drag tasks across Open → In Progress → Completed. See volunteer slots fill up in real time as applications arrive.</div><span class="feat-pill pill-n">NGO</span></div>
+    <div class="feat-card" data-type="ngo"><div class="feat-ico ico-clay">✅</div><div class="feat-name">Volunteer slot viewer</div><div class="feat-desc">See exactly who signed up for each task. Mark volunteers complete to trigger point awards automatically.</div><span class="feat-pill pill-n">NGO</span></div>
+    <div class="feat-card" data-type="ngo"><div class="feat-ico ico-purple">📊</div><div class="feat-name">AI weekly impact report</div><div class="feat-desc">Auto-generated weekly summary of tasks completed, volunteer hours, top contributors, and Gemini-derived insights.</div><span class="feat-pill pill-n">NGO</span></div>
+    <div class="feat-card" data-type="ngo"><div class="feat-ico ico-clay">📧</div><div class="feat-name">Weekly digest emails</div><div class="feat-desc">Automated cron job sends a digest to NGO staff every Monday — new applications, upcoming tasks, and impact metrics.</div><span class="feat-pill pill-n">NGO</span></div>
+    <!-- Platform -->
+    <div class="feat-card" data-type="both"><div class="feat-ico ico-purple">🗺️</div><div class="feat-name">City impact heatmap</div><div class="feat-desc">Google Maps JS API powered heatmap showing volunteer activity density across neighbourhoods. Drill into any zone.</div><span class="feat-pill pill-b">Platform</span></div>
+    <div class="feat-card" data-type="both"><div class="feat-ico ico-purple">🏆</div><div class="feat-name">City leaderboard</div><div class="feat-desc">Public leaderboard ranking top volunteers by points. Updated daily. Drives engagement and repeat participation.</div><span class="feat-pill pill-b">Platform</span></div>
+    <div class="feat-card" data-type="both"><div class="feat-ico ico-purple">🔔</div><div class="feat-name">Smart notifications</div><div class="feat-desc">In-app and email alerts for task confirmations, upcoming reminders, slot changes, and completions.</div><span class="feat-pill pill-b">Platform</span></div>
+    <div class="feat-card" data-type="both"><div class="feat-ico ico-purple">🛡️</div><div class="feat-name">Admin dashboard</div><div class="feat-desc">City admin panel with platform-wide stats, NGO approval queue, task moderation, and volunteer verification.</div><span class="feat-pill pill-b">Platform</span></div>
+    <div class="feat-card" data-type="both"><div class="feat-ico ico-gold">📱</div><div class="feat-name">Mobile-responsive UI</div><div class="feat-desc">Fully responsive HTML/CSS frontend. Volunteers check in, browse tasks, and update profiles from any smartphone.</div><span class="feat-pill pill-b">Platform</span></div>
+    <div class="feat-card" data-type="both"><div class="feat-ico ico-gold">🔒</div><div class="feat-name">Secure data model</div><div class="feat-desc">MySQL with PDO prepared statements. Role-based session auth. NGO and volunteer data is fully isolated per account.</div><span class="feat-pill pill-b">Platform</span></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="reveal">
+      <div class="sec-eyebrow">How it works</div>
+      <div class="sec-title" style="color:var(--paper)">Two portals,<br><em style="color:var(--sage-light)">one shared mission.</em></div>
+      <div class="sec-sub">The volunteer flow and NGO flow are designed to interlock — every action on one side triggers a response on the other.</div>
+    </div>
+    <div class="steps-grid reveal" style="transition-delay:0.15s">
+      <div class="step-col">
+        <h3>For <span class="col-green">volunteers</span></h3>
+        <div class="step"><div class="step-num sn-green">1</div><div class="step-body"><h4>Sign up with Google</h4><p>OAuth login, then set up your profile with skills, location, and weekly availability.</p></div></div>
+        <div class="step"><div class="step-num sn-green">2</div><div class="step-body"><h4>Discover tasks</h4><p>Browse the live board or let AI recommend the best-matched tasks for your profile.</p></div></div>
+        <div class="step"><div class="step-num sn-green">3</div><div class="step-body"><h4>Accept & check in</h4><p>Accept a task, show up on the day, and check in digitally to confirm your participation.</p></div></div>
+        <div class="step"><div class="step-num sn-green">4</div><div class="step-body"><h4>Earn points & badges</h4><p>Points are awarded automatically once the NGO marks you complete. Climb the city leaderboard.</p></div></div>
+      </div>
+      <div class="step-col">
+        <h3>For <span class="col-clay">NGOs</span></h3>
+        <div class="step"><div class="step-num sn-clay">1</div><div class="step-body"><h4>Register your organisation</h4><p>Submit your NGO profile for admin verification. Once approved, post your first task immediately.</p></div></div>
+        <div class="step"><div class="step-num sn-clay">2</div><div class="step-body"><h4>Post a micro-task</h4><p>Fill in the task form — AI assists with description writing to attract the right volunteers.</p></div></div>
+        <div class="step"><div class="step-num sn-clay">3</div><div class="step-body"><h4>Track on your kanban board</h4><p>Watch applications arrive in real time. Drag tasks across columns as work progresses.</p></div></div>
+        <div class="step"><div class="step-num sn-clay">4</div><div class="step-body"><h4>Receive your weekly report</h4><p>Every Monday, an AI-generated impact summary lands in your inbox — zero manual work needed.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech" id="tech">
+  <div class="reveal">
+    <div class="sec-eyebrow" style="color:var(--sage)">Tech stack</div>
+    <div class="sec-title">Built with tools your<br>team already knows.</div>
+    <div class="sec-sub">No complex cloud setup. PHP + MySQL + vanilla JS, with targeted API integrations where AI adds real value.</div>
+  </div>
+  <div class="tech-grid reveal" style="transition-delay:0.1s">
+    <div class="tech-card"><span class="tech-icon">🐘</span><div class="tech-name">PHP 8</div><div class="tech-role">Backend logic, session auth, API endpoints, cron jobs</div><div class="tech-tags"><span class="tech-tag">Sessions</span><span class="tech-tag">PDO</span><span class="tech-tag">REST</span><span class="tech-tag">PHPMailer</span></div></div>
+    <div class="tech-card"><span class="tech-icon">🗄️</span><div class="tech-name">MySQL</div><div class="tech-role">All persistent data — users, tasks, applications, points</div><div class="tech-tags"><span class="tech-tag">Users</span><span class="tech-tag">Tasks</span><span class="tech-tag">Points</span><span class="tech-tag">NGOs</span></div></div>
+    <div class="tech-card"><span class="tech-icon">🌐</span><div class="tech-name">HTML / CSS / JS</div><div class="tech-role">Frontend — no framework, responsive, lightweight</div><div class="tech-tags"><span class="tech-tag">Kanban</span><span class="tech-tag">Fetch API</span><span class="tech-tag">Responsive</span></div></div>
+    <div class="tech-card"><span class="tech-icon">✦</span><div class="tech-name">Gemini API</div><div class="tech-role">Task recommendations, description assist, weekly reports</div><div class="tech-tags"><span class="tech-tag">Matching</span><span class="tech-tag">Summarise</span><span class="tech-tag">Assist</span></div></div>
+    <div class="tech-card"><span class="tech-icon">🗺️</span><div class="tech-name">Google Maps JS</div><div class="tech-role">Task location pins and city volunteer activity heatmap</div><div class="tech-tags"><span class="tech-tag">Markers</span><span class="tech-tag">Heatmap</span><span class="tech-tag">Geocoding</span></div></div>
+    <div class="tech-card"><span class="tech-icon">🔑</span><div class="tech-name">Google OAuth 2.0</div><div class="tech-role">Passwordless login for volunteers via Google accounts</div><div class="tech-tags"><span class="tech-tag">OAuth flow</span><span class="tech-tag">PHP callback</span></div></div>
+    <div class="tech-card"><span class="tech-icon">📧</span><div class="tech-name">PHPMailer + Cron</div><div class="tech-role">Automated weekly digest emails sent every Monday</div><div class="tech-tags"><span class="tech-tag">SMTP</span><span class="tech-tag">Cron</span><span class="tech-tag">Templates</span></div></div>
+    <div class="tech-card"><span class="tech-icon">🚀</span><div class="tech-name">Apache / Nginx</div><div class="tech-role">Shared hosting or VPS — .env config, Git-based deploy</div><div class="tech-tags"><span class="tech-tag">.htaccess</span><span class="tech-tag">.env</span><span class="tech-tag">Hosting</span></div></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="reveal">
+    <div class="sec-eyebrow" style="color:var(--clay)">The team</div>
+    <div class="sec-title">Four builders,<br>one platform.</div>
+    <div class="sec-sub">Each member owns a full vertical — from database to UI — so work happens in parallel without stepping on each other.</div>
+  </div>
+  <div class="team-grid reveal" style="transition-delay:0.1s">
+    <div class="team-card"><div class="team-banner banner-green">🌿</div><div class="team-body"><div class="team-name">Member 1</div><div class="team-role role-green">Volunteer portal</div><ul class="team-tasks"><li>Google OAuth login flow</li><li>Volunteer profile page</li><li>Task browse + filter UI</li><li>My tasks + check-in screen</li><li>Points & badge display</li></ul></div></div>
+    <div class="team-card"><div class="team-banner banner-blue">🏢</div><div class="team-body"><div class="team-name">Member 2</div><div class="team-role role-blue">NGO portal</div><ul class="team-tasks"><li>NGO registration + profile</li><li>Post micro-task (AI assist)</li><li>Live kanban task board</li><li>Volunteer slot viewer</li><li>AI weekly report panel</li></ul></div></div>
+    <div class="team-card"><div class="team-banner banner-purple">✦</div><div class="team-body"><div class="team-name">Member 3</div><div class="team-role role-purple">AI + backend</div><ul class="team-tasks"><li>Gemini recommendation API</li><li>onTaskCreated → match</li><li>onTaskCompleted → points</li><li>Weekly digest cron + email</li><li>MySQL schema + security</li></ul></div></div>
+    <div class="team-card"><div class="team-banner banner-amber">🗺️</div><div class="team-body"><div class="team-name">Member 4</div><div class="team-role role-amber">Map + admin + demo</div><ul class="team-tasks"><li>City admin dashboard</li><li>Google Maps heatmap</li><li>Leaderboard page</li><li>Hosting + deployment</li><li>Demo video + deck</li></ul></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner reveal">
+    <h2>Ready to make your<br>city <em>kinder?</em></h2>
+    <p>Join thousands of volunteers and hundreds of NGOs already using KindMap to create real change — one micro-task at a time.</p>
+    <div class="cta-btns">
+      <a href="pages/volunteer.html" class="btn btn-white btn-lg">Join as volunteer</a>
+      <a href="pages/ngo.html" class="btn btn-border btn-lg">Register your NGO</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+     <a href="#" class="logo">Kind<span>Map</span></a>
+    <p>AI-powered volunteer coordination for cities that care.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Platform</h4>
+    <ul>
+      <li><a href="pages/volunteer.html">Volunteer portal</a></li>
+      <li><a href="pages/ngo.html">NGO portal</a></li>
+      <li><a href="#">Admin dashboard</a></li>
+      <li><a href="#">City heatmap</a></li>
+      <li><a href="#">Leaderboard</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Features</h4>
+    <ul>
+      <li><a href="#">AI task matching</a></li>
+      <li><a href="#">Points & badges</a></li>
+      <li><a href="#">Weekly reports</a></li>
+      <li><a href="#">Kanban board</a></li>
+      <li><a href="#">Notifications</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Project</h4>
+    <ul>
+      <li><a href="#">GitHub repo</a></li>
+      <li><a href="#">Tech stack</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Demo video</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 KindMap — Built with ♥ in Kolkata</span>
+  <span>PHP · MySQL · Gemini API · Google Maps JS</span>
+</div>
+
+<script>
+// Scrolled nav
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 40);
+});
+
+// Feature filter
+const tabs = document.querySelectorAll('.ftab');
+function filterFeat(type, btn) {
+  tabs.forEach(t => t.classList.remove('active-green','active-clay','active-dark'));
+  if (type === 'vol')  btn.classList.add('active-green');
+  else if (type === 'ngo')  btn.classList.add('active-clay');
+  else if (type === 'both') btn.classList.add('active-dark');
+  else btn.classList.add('active-green');
+  document.querySelectorAll('.feat-card').forEach(c => {
+    c.classList.toggle('hidden', type !== 'all' && c.dataset.type !== type);
+  });
+}
+
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
